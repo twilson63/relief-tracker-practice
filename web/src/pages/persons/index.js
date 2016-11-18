@@ -1,6 +1,5 @@
 const React = require('react')
 const {Link} = require('react-router')
-const xhr = require('xhr')
 const Persons = React.createClass({
   getInitialState: function() {
     return {
@@ -8,9 +7,7 @@ const Persons = React.createClass({
     }
   },
   componentDidMount() {
-    xhr.get('http://localhost:4000/persons', {
-      json: true
-    }, (err, response, persons) => {
+    this.props.allDocs((err, persons) => {
       if (err) return console.log(err.message)
       this.setState({persons})
     })
