@@ -51,8 +51,12 @@ const PersonForm = React.createClass({
     const formState = this.state.id ? 'Edit' : 'New'
     return (
       <div>
-        { this.state.success && this.state.id ? <Redirect to={`/persons/${this.state.id}/show`} /> : null }
-        { this.state.success && !this.state.id ? <Redirect to={`/persons`} /> : null }
+        { this.state.success && this.state.id ?
+           <Redirect to={`/persons/${this.state.id}/show`} /> : null
+        }
+        { this.state.success && !this.state.id ?
+          <Redirect to={`/persons`} /> : null
+        }
 
         <h1>{formState} Person Form</h1>
         <form onSubmit={this.handleSubmit}>

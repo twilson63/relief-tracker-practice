@@ -1,14 +1,6 @@
 {
   "persons": [
     {
-      "firstName": "Bobby",
-      "lastName": "Marley",
-      "email": "chris@foo.com",
-      "phone": "551-1243",
-      "success": false,
-      "id": "1"
-    },
-    {
       "id": 2,
       "firstName": "Elvis",
       "lastName": "Presely"
@@ -19,25 +11,20 @@
       "lastName": "Morrison"
     },
     {
-      "id": 4,
-      "firstName": "Michael",
-      "lastName": "Jackson"
-    },
-    {
-      "firstName": "Lyda",
-      "lastName": "Wilson",
-      "email": "lyda@gmail.com",
-      "phone": "555-1234",
-      "success": false,
-      "id": 5
-    },
-    {
       "firstName": "Bob",
       "lastName": "Dylan",
       "email": "",
       "phone": "",
       "success": false,
       "id": 6
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Jackson",
+      "email": "",
+      "phone": "",
+      "success": false,
+      "id": 7
     }
   ],
   "efforts": [],
