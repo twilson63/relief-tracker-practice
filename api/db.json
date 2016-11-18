@@ -1,9 +1,21 @@
 {
   "persons": [
-    { "firstName": "Bob", "lastName": "Marley"},
-    { "firstName": "Elvis", "lastName": "Presely"},
-    { "firstName": "Jim", "lastName": "Morrison"},
-    { "firstName": "Michael", "lastName": "Jackson"}
+    {
+      "id": 1,
+      "firstName": "Bob",
+      "lastName": "Marley"},
+    { 
+      "id": 2,
+      "firstName": "Elvis",
+      "lastName": "Presely"},
+    {
+      "id": 3,
+      "firstName": "Jim",
+      "lastName": "Morrison"},
+    {
+      "id": 4,
+      "firstName": "Michael",
+      "lastName": "Jackson"}
   ],
   "efforts": [],
   "locations": []
