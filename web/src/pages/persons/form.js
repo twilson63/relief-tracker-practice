@@ -22,18 +22,39 @@ const PersonForm = React.createClass({
   },
   handleSubmit(e) {
     e.preventDefault()
-    xhr.post('http://localhost:4000/persons', {
-      json: this.state
-    }, (err, response, body) => {
-      if (err) return console.log(err.message)
-      this.setState({success: true })
-    })
+    if (this.state.id) {
+      xhr.put('http://localhost:4000/persons/' + this.state.id, {
+        json: this.state
+      }, (err, response, body) => {
+        if (err) return console.log(err.message)
+        this.setState({success: true })
+      })
+    } else {
+      xhr.post('http://localhost:4000/persons', {
+        json: this.state
+      }, (err, response, body) => {
+        if (err) return console.log(err.message)
+        this.setState({success: true })
+      })
+    }
+  },
+  componentDidMount() {
+    if (this.props.params.id) {
+      xhr.get('http://localhost:4000/persons/' +
+        this.props.params.id, {json: true}, (err, response, person) => {
+          if (err) return console.log(err.message)
+          this.setState(person)
+        })
+    }
   },
   render() {
+    const formState = this.state.id ? 'Edit' : 'New'
     return (
       <div>
-        { this.state.success ? <Redirect to="/persons" /> : null }
-        <h1>New Person Form</h1>
+        { this.state.success && this.state.id ? <Redirect to={`/persons/${this.state.id}/show`} /> : null }
+        { this.state.success && !this.state.id ? <Redirect to={`/persons`} /> : null }
+
+        <h1>{formState} Person Form</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label style={labelStyle}>First Name</label>
